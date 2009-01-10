@@ -1,0 +1,1 @@
+<div<? if (isset($attributes)) echo ' '.$attributes; ?>><?= $element ?></div>
