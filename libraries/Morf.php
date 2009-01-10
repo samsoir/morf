@@ -247,10 +247,9 @@ class Morf_Core
 			{
 				$config['id'] = $config['name'];
 			}
-			else
-			{
+
+			if (empty($config['name']))
 				$config['name'] = $this->_generate_name();
-			}
 		}
 
 		$config['post'] = $this->post;
