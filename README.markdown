@@ -8,7 +8,7 @@ I have chosen to host this project on Github rather than Google Code. The reason
 
 ## How to get Morf
 
-If you have Git installed on your system, the easiest way to get Git is to use the command line. First navigate to your Kohana modules folder, then enter :
+If you have Git installed on your system, the easiest way to get Morf is to use the command line. First navigate to your Kohana modules folder, then enter :
 
 	git clone git://github.com/samsoir/morf.git
 
@@ -29,5 +29,7 @@ Full documentation will be provided soon.
 Morf has been created by [Sam Clark](http://sam.clark.name) of [Polaris Digital](http://polaris-digital.com).
 
 ## License
+
+Morf Copyright (c) 2008-2009 Polaris Digital
 
 Morf is licensed under the [General Public License version 3](http://www.gnu.org/licenses/gpl-3.0.html)
