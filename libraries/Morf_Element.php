@@ -199,6 +199,24 @@ abstract class Morf_Element_Core
 		return $result;
 	}
 
+	protected function _clean_attributes(& $attributes, $return = NULL)
+	{
+		$result = '';
+		$cleaned = array();
+		
+		foreach ($attributes as $attribute => $value )
+		{
+			if ($attribute === $return)
+				$result = ' '.$return.'="'.$value.'"';
+			else
+				$cleaned[$attribute] = $value;
+		}
+		
+		$attributes = $cleaned;
+		
+		return $result;
+	}
+
 	protected function _process_post()
 	{
 		if ((is_array($this->post) AND in_array($this->name, $this->post)) OR $this->post === TRUE)

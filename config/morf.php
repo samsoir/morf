@@ -88,5 +88,12 @@ $config['elements'] 	= array
 		(
 			'type' 			=> 'plaintext',
 			'template'		=> 'unstructured/plaintext',
+		),
+	'rating'			=> array
+		(
+			'type'			=> 'rating',
+			'template'		=> 'elements/rating',
+			'range'			=> array(0, 5),
+			'scale'			=> 1
 		)
 );

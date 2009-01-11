@@ -3,30 +3,12 @@
 class Morf_Radiogroup_Core extends Morf_Group
 {
 	
-	protected function _clean_attributes(& $attributes)
-	{
-		$result = '';
-		$cleaned = array();
-		
-		foreach ($attributes as $attribute => $value )
-		{
-			if ($attribute === 'id')
-				$result = ' id="'.$value.'"';
-			else
-				$cleaned[$attribute] = $value;
-		}
-		
-		$attributes = $cleaned;
-		
-		return $result;
-	}
-
 	public function render(& $render_variables, $errors = array())
 	{
 		$result = parent::render($render_variables, $errors);
 
 		// Clean attributes
-		$id = $this->_clean_attributes($result['attributes']);
+		$id = $this->_clean_attributes($result['attributes'], 'id');
 
 		$buffer = array();
 		
@@ -40,5 +22,5 @@ class Morf_Radiogroup_Core extends Morf_Group
 		$result['template']->element = $buffer;
 
 		return (string) $result['template']->render();
-	}	
+	}
 }
