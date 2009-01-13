@@ -13,6 +13,9 @@ class Morf_Input_Core extends Morf_Element
 			case 'input'	:
 				$result['template']->element = form::input($result['attributes'], $this->value);
 				break;
+			case 'password'	:
+				$result['template']->element = form::password($result['attributes'], $this->value);
+				break;
 			case 'submit'	:
 				$result['template']->element = form::submit($result['attributes'], $this->value);
 				$render_variables['submit'] = TRUE;
