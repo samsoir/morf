@@ -24,10 +24,14 @@ class Morf_Input_Core extends Morf_Element
 				$result['template']->element = form::radio($result['attributes'], $this->value);
 				break;
 			case 'checkbox'	:
-				$result['template']->element = form::checkbox($result['attributes'], $this->value);
+				$result['attributes']['value'] = $this->value;
+				if ($this->value = Input::instance()->post($this->name))
+					$result['template']->element = form::checkbox($result['attributes'], $this->value, TRUE);
+				else
+					$result['template']->element = form::checkbox($result['attributes'], $this->value);
 				break;
 			case 'hidden'	:
-				$result['template']->element = form::hidden($result['attributes'], $this->value);
+				$result['template']->element = form::hidden($this->name, $this->value);
 				break;
 			case 'file'		:
 				$result['template']->element = form::upload($result['attributes'], $this->value);
