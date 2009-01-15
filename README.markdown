@@ -12,17 +12,19 @@ By using standard existing Kohana helpers and libraries, Morf is highly customis
 
 ## Features
 
-  -	Supports common form elements, including standard inputs, text areas. buttons, select lists, radio groups, ratings and fieldsets
-  -	Highly customisable templating system using Kohana's view library. Output your elements any way you like
-  -	Chainable element creation
-  -	Plain text elements supported for insertion of custom HTML code anywhere within the form structure
-  -	Supports HTML5 data attributes
-  -	Supports the Kohana Validation library
-  -	Posted form values can be auto-filled on reload, with full control over which fields auto-populate.
-  -	Auto detects absence of a submit button and appends one to the end automatically
-  -	Auto detects file input elements and switches form enctype attribute accordingly
-  -	Morf forms can be passed directly to the view as an object
-  -	Full i18n support for default form values
+<ul>
+	<li>Supports common form elements, including standard inputs, text areas. buttons, select lists, radio groups, ratings and fieldsets</li>
+	<li>Highly customisable templating system using Kohana's view library. Output your elements any way you like</li>
+	<li>Chainable element creation</li>
+	<li>Plain text elements supported for insertion of custom HTML code anywhere within the form structure</li>
+	<li>Supports HTML5 data attributes</li>
+	<li>Supports the Kohana Validation library</li>
+	<li>Posted form values can be auto-filled on reload, with full control over which fields auto-populate</li>
+	<li>Auto detects absence of a submit button and appends one to the end automatically</li>
+	<li>Auto detects file input elements and switches form enctype attribute accordingly</li>
+	<li>Morf forms can be passed directly to the view as an object</li>
+	<li>Full i18n support for default form values</li>
+</ul>
 
 ## What is in a name?
 
