@@ -161,6 +161,25 @@ abstract class Morf_Element_Core
 	}
 
 	/**
+	 * Overload the __isset() method to allow checking for values
+	 *
+	 * @param string      key The key to check
+	 * @return boolean        TRUE if value is set, FALSE otherwise
+	 * @author Sam Clark
+	 */
+	public function __isset($key)
+	{
+		$result = FALSE;
+
+		if (array_key_exists($key, $this->attributes))
+			$result = isset($this->attributes[$key]);
+		elseif (property_exists($this, $key))
+			$result = isset($this->$key);
+		
+		return $result;
+	}
+
+	/**
 	 * Set a class name to the class attribute. This method automatically handles multiple class names
 	 *
 	 * @param string $value The class name to add to the class attribute

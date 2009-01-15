@@ -136,6 +136,25 @@ class Morf_Core
 	}
 
 	/**
+	 * Overload the __isset() method to allow checking for values
+	 *
+	 * @param string      key The key to check
+	 * @return boolean        TRUE if value is set, FALSE otherwise
+	 * @author Sam Clark
+	 */
+	public function __isset($key)
+	{
+		$result = FALSE;
+
+		if (array_key_exists($key, $this->attributes))
+			$result = isset($this->attributes[$key]);
+		elseif ($this->elements->offsetExists($key))
+			$result = isset($this->elements->offsetGet($key));
+		
+		return $result;
+	}
+
+	/**
 	 * Overload the __call() method to give access to new element/fieldset creation, also allows access to attributes to allow chaining
 	 *
 	 * @param string $method The name of the element to create
@@ -202,7 +221,7 @@ class Morf_Core
 					$this->_add_element(Morf_Element::factory($elements[$method]['type'], $config, $value), $uid);
 					break;
 				case 3 :
-					$this->_add_element(Morf_Element::factory($elements[$method]['type'], $config, $value), $uid);
+					$this->_add_element(Morf_Element::factory($elements[$method]['type'], $config, $value, $selected), $uid);
 					break;
 				default :
 					throw new Kohana_Exception('Morf::__call() too many arguments supplied for method : '.$method, $method);
