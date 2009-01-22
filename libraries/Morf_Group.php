@@ -26,7 +26,7 @@ abstract class Morf_Group_Core extends Morf_Element
 		
 		// If $force_selection is TRUE, add 'Please select...' as first item
 		if ($this->force_selection)
-			array_unshift($this->options, ucfirst(Kohana::lang('morf.pleaseselect')));
+			$this->options = array('_NO_SELECTION_' => ucfirst(Kohana::lang('morf.pleaseselect'))) + $this->options;
 
 		return $result;
 	}
