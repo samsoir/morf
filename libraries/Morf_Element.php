@@ -154,9 +154,9 @@ abstract class Morf_Element_Core
 		{
 			$this->attributes[$key] = $value;
 		}
-		elseif ($key === 'value')
+		elseif (in_array($key, array('value', 'template'))
 		{
-			$this->value = $value;
+			$this->$key = $value;
 		}
 	}
 
