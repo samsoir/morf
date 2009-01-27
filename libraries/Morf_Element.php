@@ -309,17 +309,16 @@ abstract class Morf_Element_Core
 	 */
 	public function render(& $render_variables, $errors = array())
 	{
+		// Override the template name for this element if locally modified
+		if (isset($this->template))
+			$template_name = $this->template;
+		else
+			$template_name = Kohana::config('morf.elements.'.$this->type.'.template');
+
+		$result = array( 'template' => new View('morf/'.$template_name));
+
 		if ( ! in_array($this->type, array('submit', 'hidden')))
 		{
-			// Override the template name for this element if locally modified
-			if (isset($this->template))
-				$template_name = $this->template;
-			else
-				$template_name = Kohana::config('morf.elements.'.$this->type.'.template');
-
-			// Create output buffer
-			$result = array('template' => new View('morf/'.$template_name));
-
 			// Process post
 			if ($this->post)
 				$this->_process_post();
@@ -347,10 +346,7 @@ abstract class Morf_Element_Core
 					$result['template']->label = form::label($this->name, $this->label);
 		
 		}
-		else
-		{
-			$result = array( 'template' => new View('morf/unstructured/'.$this->type));
-		}
+
 		if ($this->type === 'file')
 			$upload = TRUE;
 
