@@ -149,7 +149,7 @@ class Morf_Core
 		if (array_key_exists($key, $this->attributes))
 			$result = isset($this->attributes[$key]);
 		elseif ($this->elements->offsetExists($key))
-			$result = isset($this->elements->offsetGet($key));
+			$result = $this->elements->offsetExists($key);
 		
 		return $result;
 	}
